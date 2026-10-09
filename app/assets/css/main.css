@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  --color-ink: #173f35;
+  --color-mint: #8de1c3;
+  --color-mint-soft: #eafbf3;
+  --color-lemon: #ffe56b;
+  --color-peach: #ff9db0;
+  --color-paper: #fffdf8;
+  --color-danger: #d94a63;
+}
+
+:root {
+  --theme-body-accent-one: rgb(255 229 107 / 55%);
+  --theme-body-accent-two: rgb(255 157 176 / 35%);
+  --theme-card-border: 2px solid var(--color-ink);
+  --theme-card-radius: 1rem;
+  --theme-card-shadow: 5px 5px 0 var(--color-ink);
+  --theme-button-border: 2px solid var(--color-ink);
+  --theme-button-radius: 0.85rem;
+  --theme-button-shadow: 3px 3px 0 var(--color-ink);
+  --theme-field-border: 2px solid var(--color-ink);
+  --theme-field-radius: 0.85rem;
+  --theme-focus-ring: rgb(141 225 195 / 55%);
+  color: var(--color-ink);
+  background: var(--color-mint-soft);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+}
+
+html[data-theme="peach-kitchen"] {
+  --color-ink: #60352e;
+  --color-mint: #ff8066;
+  --color-mint-soft: #fff1ea;
+  --color-lemon: #ffe0ad;
+  --color-peach: #ffc2b4;
+  --color-paper: #fffaf5;
+  --color-danger: #b83f45;
+  --theme-body-accent-one: rgb(255 128 102 / 20%);
+  --theme-body-accent-two: rgb(255 224 173 / 48%);
+  --theme-card-border: 1px solid rgb(160 106 96 / 22%);
+  --theme-card-radius: 1.4rem;
+  --theme-card-shadow: 0 12px 32px rgb(136 73 59 / 14%);
+  --theme-button-border: 1px solid rgb(96 53 46 / 18%);
+  --theme-button-radius: 1.15rem;
+  --theme-button-shadow: 0 8px 20px rgb(201 92 69 / 18%);
+  --theme-field-border: 1px solid rgb(160 106 96 / 35%);
+  --theme-field-radius: 1.1rem;
+  --theme-focus-ring: rgb(255 128 102 / 28%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 12% 8%, var(--theme-body-accent-one) 0 8rem, transparent 8.1rem),
+    radial-gradient(circle at 90% 88%, var(--theme-body-accent-two) 0 10rem, transparent 10.1rem),
+    var(--color-mint-soft);
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+button,
+a,
+input,
+select {
+  outline-color: var(--color-ink);
+}
+
+.sticker-card {
+  border: var(--theme-card-border);
+  border-radius: var(--theme-card-radius);
+  background: var(--color-paper);
+  box-shadow: var(--theme-card-shadow);
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.sticker-button {
+  min-height: 2.75rem;
+  border: var(--theme-button-border);
+  border-radius: var(--theme-button-radius);
+  box-shadow: var(--theme-button-shadow);
+  font-weight: 800;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.sticker-button:not(:disabled):active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--color-ink);
+}
+
+.sticker-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.form-field {
+  width: 100%;
+  min-height: 2.75rem;
+  border: var(--theme-field-border);
+  border-radius: var(--theme-field-radius);
+  background: white;
+  padding: 0.7rem 0.85rem;
+}
+
+.form-field:focus {
+  box-shadow: 0 0 0 3px var(--theme-focus-ring);
+}
+
+.theme-brand-badge {
+  border: var(--theme-button-border);
+  border-radius: var(--theme-button-radius);
+  box-shadow: var(--theme-button-shadow);
+}
+
+.app-bottom-nav {
+  border: var(--theme-card-border);
+  border-radius: var(--theme-card-radius);
+  box-shadow: var(--theme-card-shadow);
+}
+
+.theme-copy--peach {
+  display: none;
+}
+
+html[data-theme="peach-kitchen"] .theme-copy--mint {
+  display: none;
+}
+
+html[data-theme="peach-kitchen"] .theme-copy--peach {
+  display: revert;
+}
+
+html[data-theme="peach-kitchen"] .sticker-button:not(:disabled):active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 3px 10px rgb(201 92 69 / 16%);
+}
+
+.theme-choice {
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.theme-choice--peach {
+  border: 1px solid rgb(160 106 96 / 25%);
+  color: #60352e;
+  background: #fff1ea;
+  box-shadow: 0 14px 34px rgb(136 73 59 / 14%);
+}
+
+.theme-choice--mint {
+  border: 2px solid #173f35;
+  color: #173f35;
+  background: #eafbf3;
+  box-shadow: 5px 5px 0 #173f35;
+}
+
+.theme-choice--peach .theme-current-badge {
+  color: white;
+  background: #ff8066;
+}
+
+.theme-choice--mint .theme-current-badge {
+  color: white;
+  background: #173f35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

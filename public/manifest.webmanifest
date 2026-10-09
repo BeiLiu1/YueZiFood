@@ -1,0 +1,15 @@
+{
+  "name": "悦子吃什么 · 薄荷便当社",
+  "short_name": "悦子吃什么",
+  "description": "选出今天的快乐来源。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#eafbf3",
+  "theme_color": "#8de1c3",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
